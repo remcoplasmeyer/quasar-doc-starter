@@ -16,7 +16,6 @@
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
-    "docsearch.js": "^2.6.2",
     "prismjs": "^1.15.0",
     "quasar": "^1.0.0"
   },

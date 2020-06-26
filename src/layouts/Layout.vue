@@ -5,7 +5,7 @@ q-layout.doc-layout(view="lHh LpR lff", @scroll="onScroll")
       q-btn.q-mr-sm(flat, dense, round, @click="toggleLeftDrawer", aria-label="Menu")
         q-icon(:name="mdiMenu", size="sm")
 
-      q-toolbar-title(shrink, :style="{overflow: 'visible'}", class="q-pa-none") Documentation
+      q-toolbar-title(shrink, :style="{overflow: 'visible'}", class="q-pa-none")
 
       q-space
 
@@ -46,29 +46,8 @@ q-layout.doc-layout(view="lHh LpR lff", @scroll="onScroll")
       app-menu.q-my-lg
 
     .absolute-top.bg-white.layout-drawer-toolbar
-      form(
-        autocorrect="off"
-        autocapitalize="off"
-        autocomplete="off"
-        spellcheck="false"
-      )
-        q-input.full-width.doc-algolia.bg-primary(
-          ref="docAlgolia"
-          v-model="search"
-          dense
-          square
-          dark
-          borderless
-          :placeholder="searchPlaceholder"
-          @focus="onSearchFocus"
-          @blur="onSearchBlur"
-        )
-          template(v-slot:append)
-            q-icon(
-              :name="mdiMagnify"
-              @click="$refs.docAlgolia.focus()"
-            )
-      .layout-drawer-toolbar__shadow.absolute-full.overflow-hidden.no-pointer-events
+      div.text-bold.text-h4.q-ml-md.q-mt-md
+        | Documentation
 
   q-drawer(
     v-if="hasRightDrawer"
@@ -322,8 +301,11 @@ export default {
     },
 
     initializeAlgolia () {
+      // todo: one day
+
       // If we have a search string in the query (mostly from tab-to-search functionality),
       // we need to open the drawer to fill in the search string in the input later
+      /*
       const searchQuery = this.$route.query.search
 
       if (searchQuery) {
@@ -331,7 +313,6 @@ export default {
       }
 
       import(
-        /* webpackChunkName: "algolia" */
         'docsearch.js'
       ).then(docsearch => {
         docsearch.default({
@@ -367,6 +348,7 @@ export default {
           })
         }
       })
+       */
     }
   },
 
@@ -386,7 +368,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import '../css/docsearch'
+// @import '../css/docsearch'
 
 .header
   background: $primary
